@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ADZA Digital — Unlock Revenue Through Digital and AI</title>
+  <meta name="description" content="Adza Digital helps technology companies access new markets, build robust product practices, and turn digital and AI into real commercial results — across Australia and the GCC.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: #ffffff;
+      font-family: 'Hanken Grotesk', system-ui, sans-serif;
+      color: #102a3c;
+      -webkit-font-smoothing: antialiased;
+    }
+    ::selection { background: #1278b8; color: #fff; }
+    a { text-decoration: none; color: inherit; }
+    button { font-family: inherit; }
+
+    @keyframes adFloat {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-8px); }
+    }
+
+    /* ── Nav ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      background: rgba(255,255,255,0.88);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e4edf4;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+    .nav-logo img { height: 30px; width: auto; display: block; }
+    .nav-wordmark {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: .14em;
+      color: #102a3c;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+    .nav-links a {
+      font-size: 15px;
+      font-weight: 500;
+      color: #476073;
+      transition: color .15s;
+    }
+    .nav-links a:hover { color: #1278b8; }
+    .btn-nav {
+      font-weight: 600;
+      font-size: 15px;
+      color: #fff;
+      background: #1278b8;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 18px;
+      cursor: pointer;
+      box-shadow: 0 6px 16px rgba(18,120,184,.22);
+      transition: background .15s, box-shadow .15s;
+    }
+    .btn-nav:hover {
+      background: #0f6aa6;
+      box-shadow: 0 8px 20px rgba(18,120,184,.32);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: clamp(56px,8vw,104px) 26px clamp(48px,6vw,80px);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: clamp(32px,5vw,68px);
+      align-items: center;
+    }
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 12.5px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #1278b8;
+      background: #eef6fc;
+      border: 1px solid #d6e8f5;
+      border-radius: 100px;
+      padding: 7px 14px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: clamp(38px,5.3vw,64px);
+      line-height: 1.04;
+      letter-spacing: -.02em;
+      margin: 0 0 22px;
+      color: #0d2435;
+    }
+    .hero h1 span { color: #1278b8; }
+    .hero-desc {
+      font-size: clamp(17px,1.5vw,19.5px);
+      line-height: 1.62;
+      color: #476073;
+      max-width: 560px;
+      margin: 0 0 32px;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      font-weight: 600;
+      font-size: 16.5px;
+      color: #fff;
+      background: #1278b8;
+      border: none;
+      border-radius: 10px;
+      padding: 15px 26px;
+      cursor: pointer;
+      box-shadow: 0 10px 26px rgba(18,120,184,.28);
+      transition: background .15s, box-shadow .15s;
+    }
+    .btn-primary:hover {
+      background: #0f6aa6;
+      box-shadow: 0 14px 32px rgba(18,120,184,.36);
+    }
+    .link-secondary {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 16.5px;
+      color: #0d2435;
+      padding: 15px 8px;
+      border-bottom: 2px solid transparent;
+      transition: border-color .15s;
+    }
+    .link-secondary:hover { border-bottom-color: #1278b8; }
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 34px;
+      color: #7d909d;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .hero-meta-flag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .hero-meta-flag strong {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 700;
+      color: #1278b8;
+    }
+    .hero-meta-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #c2d2dd;
+    }
+
+    /* Hero geometric panel */
+    .hero-panel {
+      position: relative;
+      border-radius: 20px;
+      background: #1278b8;
+      background-image: linear-gradient(155deg, #1a86c7 0%, #0f6aa6 60%, #0c5d92 100%);
+      aspect-ratio: 1 / 1.04;
+      overflow: hidden;
+      box-shadow: 0 30px 70px -28px rgba(12,93,146,.55);
+    }
+    .hero-panel-svg {
+      position: absolute;
+      inset: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .hero-panel-footer {
+      position: absolute;
+      left: 24px;
+      bottom: 24px;
+      right: 24px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .hero-chip {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 16px 18px;
+      box-shadow: 0 14px 34px rgba(7,47,74,.3);
+      animation: adFloat 5s ease-in-out infinite;
+    }
+    .hero-chip-value {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: 30px;
+      line-height: 1;
+      color: #0d2435;
+    }
+    .hero-chip-label {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #5d7180;
+      margin-top: 5px;
+      letter-spacing: .01em;
+    }
+    .hero-panel-label {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.78);
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+    }
+
+    /* ── Problem ── */
+    .problem {
+      background: #0d2435;
+      color: #eaf2f8;
+    }
+    .problem-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(72px,9vw,118px) 26px;
+    }
+    .section-eyebrow {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 12.5px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      margin-bottom: 26px;
+    }
+    .section-eyebrow--light { color: #5fb4e6; }
+    .section-eyebrow--blue  { color: #1278b8; }
+    .problem-headline {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: clamp(24px,3vw,38px);
+      line-height: 1.28;
+      letter-spacing: -.01em;
+      margin: 0 0 30px;
+      max-width: 920px;
+      color: #ffffff;
+    }
+    .problem-headline span { color: #5fb4e6; }
+    .problem-body {
+      font-size: clamp(16.5px,1.5vw,19px);
+      line-height: 1.66;
+      color: #b6c9d6;
+      max-width: 760px;
+      margin: 0 0 20px;
+    }
+    .problem-body:last-child { margin: 0; }
+
+    /* ── Services ── */
+    .services {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: clamp(72px,9vw,118px) 26px;
+    }
+    .services-header {
+      max-width: 680px;
+      margin-bottom: clamp(40px,5vw,60px);
+    }
+    .services-header h2 {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: clamp(30px,3.6vw,46px);
+      line-height: 1.08;
+      letter-spacing: -.02em;
+      margin: 0;
+      color: #0d2435;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+    .card {
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border: 1px solid #e2ecf3;
+      border-radius: 16px;
+      padding: 30px 28px;
+      box-shadow: 0 1px 2px rgba(13,36,53,.04);
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+    }
+    .card-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: #eef6fc;
+      color: #1278b8;
+    }
+    .card-num {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: #cdd9e2;
+    }
+    .card h3 {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 21px;
+      line-height: 1.2;
+      margin: 0 0 10px;
+      color: #0d2435;
+    }
+    .card-tag {
+      display: inline-flex;
+      align-self: flex-start;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #1278b8;
+      background: #eef6fc;
+      border: 1px solid #d6e8f5;
+      border-radius: 100px;
+      padding: 5px 11px;
+      margin-bottom: 16px;
+    }
+    .card p {
+      font-size: 15.5px;
+      line-height: 1.6;
+      color: #52677a;
+      margin: 0;
+    }
+
+    /* ── Proof ── */
+    .proof {
+      background: #1278b8;
+      background-image: linear-gradient(160deg, #1581c2 0%, #0f6aa6 100%);
+      color: #fff;
+    }
+    .proof-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: clamp(72px,9vw,118px) 26px;
+    }
+    .proof-eyebrow {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 12.5px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.72);
+      margin-bottom: 14px;
+    }
+    .proof-headline {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: clamp(28px,3.4vw,44px);
+      line-height: 1.08;
+      letter-spacing: -.02em;
+      margin: 0 0 clamp(40px,5vw,58px);
+      color: #fff;
+      max-width: 680px;
+    }
+    .proof-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      border-top: 1px solid rgba(255,255,255,.2);
+      padding-top: clamp(36px,4vw,48px);
+    }
+    .stat-value {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: clamp(46px,5.5vw,68px);
+      line-height: .95;
+      letter-spacing: -.02em;
+      color: #fff;
+    }
+    .stat-desc {
+      font-size: 16px;
+      line-height: 1.55;
+      color: rgba(255,255,255,.84);
+      margin: 14px 0 0;
+      max-width: 280px;
+    }
+    .proof-clients {
+      font-size: clamp(16px,1.5vw,18px);
+      line-height: 1.6;
+      color: rgba(255,255,255,.9);
+      margin: clamp(44px,5vw,60px) 0 0;
+      max-width: 760px;
+    }
+    .proof-clients strong { color: #fff; font-weight: 700; }
+
+    /* ── We Build ── */
+    .build {
+      background: #f6fafd;
+      border-top: 1px solid #e8eef4;
+    }
+    .build-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: clamp(72px,9vw,118px) 26px;
+    }
+    .build-header {
+      max-width: 720px;
+      margin-bottom: clamp(40px,5vw,56px);
+    }
+    .build-header h2 {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: clamp(30px,3.6vw,46px);
+      line-height: 1.08;
+      letter-spacing: -.02em;
+      margin: 0 0 18px;
+      color: #0d2435;
+    }
+    .build-header p {
+      font-size: clamp(16.5px,1.5vw,18.5px);
+      line-height: 1.64;
+      color: #52677a;
+      margin: 0;
+    }
+    .build-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+    .build-card {
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border: 1px solid #e2ecf3;
+      border-radius: 16px;
+      padding: 32px 30px;
+      box-shadow: 0 1px 2px rgba(13,36,53,.04);
+    }
+    .build-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+    }
+    .build-card-mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      color: #fff;
+    }
+    .build-card-mark--dark  { background: #0d2435; }
+    .build-card-mark--blue  { background: #1278b8; }
+    .build-card-badge {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #1278b8;
+      background: #eef6fc;
+      border: 1px solid #d6e8f5;
+      border-radius: 100px;
+      padding: 5px 12px;
+    }
+    .build-card h3 {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: 26px;
+      line-height: 1.1;
+      margin: 0 0 10px;
+      color: #0d2435;
+    }
+    .build-card h3 a {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1278b8;
+      margin-left: 8px;
+    }
+    .build-card h3 a:hover { text-decoration: underline; }
+    .build-card p {
+      font-size: 15.5px;
+      line-height: 1.6;
+      color: #52677a;
+      margin: 0;
+    }
+    .build-tagline {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: clamp(17px,1.7vw,21px);
+      line-height: 1.45;
+      color: #0d2435;
+      margin: clamp(36px,4vw,44px) 0 0;
+      max-width: 620px;
+    }
+
+    /* ── How We Work ── */
+    .approach {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: clamp(72px,9vw,118px) 26px;
+    }
+    .approach-grid {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: clamp(36px,5vw,72px);
+      align-items: start;
+    }
+    .approach-left h2 {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: clamp(30px,3.6vw,46px);
+      line-height: 1.08;
+      letter-spacing: -.02em;
+      margin: 0 0 22px;
+      color: #0d2435;
+    }
+    .approach-left p {
+      font-size: clamp(16.5px,1.5vw,18.5px);
+      line-height: 1.64;
+      color: #52677a;
+      margin: 0;
+    }
+    .approach-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .step {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      background: #f6fafd;
+      border: 1px solid #e2ecf3;
+      border-radius: 14px;
+      padding: 22px 24px;
+    }
+    .step-num {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      color: #1278b8;
+      min-width: 30px;
+    }
+    .step-title {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 18px;
+      color: #0d2435;
+      margin-bottom: 5px;
+    }
+    .step p {
+      font-size: 15.5px;
+      line-height: 1.55;
+      color: #52677a;
+      margin: 0;
+    }
+
+    /* ── Final CTA ── */
+    .cta {
+      background: #0d2435;
+    }
+    .cta-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: clamp(64px,8vw,104px) 26px;
+      text-align: center;
+    }
+    .cta h2 {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: clamp(30px,4vw,52px);
+      line-height: 1.08;
+      letter-spacing: -.02em;
+      margin: 0 auto 20px;
+      color: #fff;
+      max-width: 740px;
+    }
+    .cta p {
+      font-size: clamp(16.5px,1.5vw,19px);
+      line-height: 1.6;
+      color: #b6c9d6;
+      margin: 0 auto 34px;
+      max-width: 560px;
+    }
+    .btn-cta {
+      font-weight: 600;
+      font-size: 17px;
+      color: #0d2435;
+      background: #fff;
+      border: none;
+      border-radius: 11px;
+      padding: 16px 30px;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
+      transition: transform .15s, box-shadow .15s;
+    }
+    .btn-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 36px rgba(0,0,0,.32);
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #0a1d2c;
+      color: #9fb3c2;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+    .footer-logo img { height: 26px; width: auto; display: block; }
+    .footer-wordmark {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: .14em;
+      color: #fff;
+    }
+    .footer-location { font-size: 13.5px; color: #7d909d; }
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 13.5px;
+    }
+    .footer-links a {
+      color: #bcd0de;
+      border-bottom: 1px solid rgba(188,208,222,.35);
+      padding-bottom: 1px;
+      transition: color .15s;
+    }
+    .footer-links a:hover { color: #fff; }
+    .footer-copy { font-size: 13.5px; color: #7d909d; }
+
+    /* ── Modal ── */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(8,22,33,.6);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .2s, visibility .2s;
+    }
+    .modal-backdrop.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .modal-box {
+      width: 100%;
+      max-width: 480px;
+      background: #fff;
+      border-radius: 18px;
+      padding: clamp(26px,4vw,38px);
+      box-shadow: 0 40px 90px -20px rgba(7,30,48,.55);
+      position: relative;
+      max-height: 92vh;
+      overflow: auto;
+      transform: translateY(12px);
+      transition: transform .2s;
+    }
+    .modal-backdrop.is-open .modal-box {
+      transform: translateY(0);
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      border: none;
+      background: #f1f5f8;
+      color: #52677a;
+      font-size: 18px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .15s;
+    }
+    .modal-close:hover { background: #e2ecf3; }
+    .modal-logo { height: 24px; width: auto; display: block; margin-bottom: 6px; }
+    .modal-title {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: clamp(22px,3vw,28px);
+      line-height: 1.1;
+      margin: 8px 0 8px;
+      color: #0d2435;
+    }
+    .modal-sub {
+      font-size: 15px;
+      line-height: 1.55;
+      color: #52677a;
+      margin: 0 0 24px;
+    }
+    .field { display: block; margin-bottom: 16px; }
+    .field:last-of-type { margin-bottom: 24px; }
+    .field-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: #3d5666;
+      margin-bottom: 7px;
+    }
+    .field-input {
+      width: 100%;
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-size: 15.5px;
+      color: #0d2435;
+      background: #f7fafc;
+      border: 1px solid #dde8f0;
+      border-radius: 10px;
+      padding: 12px 14px;
+      outline: none;
+      transition: border-color .15s, background .15s;
+    }
+    .field-input:focus {
+      border-color: #1278b8;
+      background: #fff;
+    }
+    .btn-submit {
+      width: 100%;
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      color: #fff;
+      background: #1278b8;
+      border: none;
+      border-radius: 11px;
+      padding: 15px;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(18,120,184,.26);
+      transition: background .15s;
+    }
+    .btn-submit:hover { background: #0f6aa6; }
+
+    /* Thank you state */
+    .modal-thankyou {
+      text-align: center;
+      padding: 18px 6px;
+      display: none;
+    }
+    .modal-thankyou.is-visible { display: block; }
+    .modal-form-wrap { display: block; }
+    .modal-form-wrap.is-hidden { display: none; }
+    .thankyou-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #eef6fc;
+      color: #1278b8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .thankyou-title {
+      font-family: 'Schibsted Grotesk', sans-serif;
+      font-weight: 800;
+      font-size: 24px;
+      margin: 0 0 10px;
+      color: #0d2435;
+    }
+    .thankyou-desc {
+      font-size: 15.5px;
+      line-height: 1.55;
+      color: #52677a;
+      margin: 0 0 24px;
+    }
+    .btn-done {
+      font-family: 'Hanken Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 15.5px;
+      color: #fff;
+      background: #1278b8;
+      border: none;
+      border-radius: 10px;
+      padding: 13px 24px;
+      cursor: pointer;
+    }
+    .btn-done:hover { background: #0f6aa6; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .hero-grid        { grid-template-columns: 1fr; }
+      .hero-panel       { display: none; }
+      .services-grid    { grid-template-columns: 1fr; }
+      .build-grid       { grid-template-columns: 1fr; }
+      .proof-stats      { grid-template-columns: 1fr; }
+      .approach-grid    { grid-template-columns: 1fr; }
+      .nav-links a      { display: none; }
+    }
+    @media (max-width: 600px) {
+      .nav-links        { gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#top" class="nav-logo">
+        <img src="project/assets/logo-mark.png" alt="ADZA Digital">
+        <span class="nav-wordmark">ADZA DIGITAL</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#problem">The problem</a>
+        <a href="#services">Services</a>
+        <a href="#proof">Track record</a>
+        <a href="#build">We build</a>
+        <a href="#approach">How we work</a>
+        <button class="btn-nav" onclick="openForm()">Let's talk &rarr;</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="top" class="hero">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-pill">Digital &amp; AI &middot; Australia &amp; the GCC</div>
+        <h1>We unlock revenue through<span> digital and AI.</span></h1>
+        <p class="hero-desc">Adza Digital helps technology companies access new markets, build robust product practices, and turn digital and AI into real commercial results — across Australia and the GCC.</p>
+        <div class="hero-actions">
+          <button class="btn-primary" onclick="openForm()">Let's talk &rarr;</button>
+          <a href="#proof" class="link-secondary">See the track record</a>
+        </div>
+        <div class="hero-meta">
+          <span class="hero-meta-flag">
+            <strong>AU</strong> &#8644; <strong>GCC</strong>
+          </span>
+          <span class="hero-meta-dot"></span>
+          <span>Two decades of commercial digital leadership</span>
+        </div>
+      </div>
+
+      <div class="hero-panel">
+        <svg class="hero-panel-svg" viewBox="0 0 400 416" preserveAspectRatio="xMidYMid slice">
+          <g fill="none" stroke="#ffffff" stroke-width="14" stroke-linecap="square" stroke-linejoin="miter">
+            <polyline points="96,360 200,256 304,360" opacity="0.10"/>
+            <polyline points="96,300 200,196 304,300" opacity="0.16"/>
+            <polyline points="96,240 200,136 304,240" opacity="0.26"/>
+            <polyline points="96,180 200,76  304,180" opacity="0.42"/>
+            <polyline points="96,120 200,16  304,120" opacity="0.85"/>
+          </g>
+        </svg>
+        <div class="hero-panel-footer">
+          <div class="hero-chip">
+            <div class="hero-chip-value">$17M</div>
+            <div class="hero-chip-label">recovered lost sales</div>
+          </div>
+          <div class="hero-panel-label">Move the numbers</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="problem" class="problem">
+    <div class="problem-inner">
+      <div class="section-eyebrow section-eyebrow--light">The opportunity</div>
+      <p class="problem-headline">The revenue is already there.<span> It's just locked.</span></p>
+      <p class="problem-body">There's revenue locked inside most businesses — in a market they haven't cracked, a product practice that isn't firing, or digital and AI capability they haven't put to work.</p>
+      <p class="problem-body">We unlock it. We find where the commercial value is, build the case, and stay in the room until it's realised. Not advice you file away. Outcomes you can put in a board pack.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="services">
+    <div class="services-header">
+      <div class="section-eyebrow section-eyebrow--blue">What we do</div>
+      <h2>Three places we unlock commercial value</h2>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- 01 Market Access -->
+      <article class="card">
+        <div class="card-header">
+          <span class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 9h13l-3-3"/>
+              <path d="M20 15H7l3 3"/>
+            </svg>
+          </span>
+          <span class="card-num">01</span>
+        </div>
+        <h3>Market Access</h3>
+        <span class="card-tag">Australia &#8644; GCC / UAE</span>
+        <p>You've built something that works at home. Entering a new market is a different game — regulatory, commercial, relationship-driven. We help technology companies land in Australia or the GCC with a real plan: who to sell to, how to price, which doors to knock on, and the introductions to open them. We've operated on both sides of this corridor and know what it takes to get traction.</p>
+      </article>
+
+      <!-- 02 Revenue Through Digital & AI -->
+      <article class="card">
+        <div class="card-header">
+          <span class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 17l6-6 4 4 8-8"/>
+              <path d="M16 7h5v5"/>
+            </svg>
+          </span>
+          <span class="card-num">02</span>
+        </div>
+        <h3>Revenue Through Digital &amp; AI</h3>
+        <span class="card-tag">Where most locked value sits</span>
+        <p>This is where most of the locked value sits. We help businesses unlock revenue and profitability through digital and AI — finding where the commercial upside actually is, not where the hype is, building the case, and staying embedded until the numbers move: conversion, revenue, margin. No 80-page deck and a handshake. We're accountable to the same metrics you are.</p>
+      </article>
+
+      <!-- 03 Product & Growth -->
+      <article class="card">
+        <div class="card-header">
+          <span class="card-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="9" rx="1.5"/>
+              <rect x="14" y="3" width="7" height="5" rx="1.5"/>
+              <rect x="14" y="12" width="7" height="9" rx="1.5"/>
+              <rect x="3" y="16" width="7" height="5" rx="1.5"/>
+            </svg>
+          </span>
+          <span class="card-num">03</span>
+        </div>
+        <h3>Product &amp; Growth</h3>
+        <span class="card-tag">Build the muscle, not a dependency</span>
+        <p>A robust product practice is the difference between a roadmap and a wish list — and it's the engine of sustainable growth. We help companies put the muscle in place: discovery, prioritisation, delivery, and the operating rhythm that connects what gets built to what the business actually needs. We embed with your team and build your capability, rather than creating a dependency on us.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- PROOF -->
+  <section id="proof" class="proof">
+    <div class="proof-inner">
+      <div class="proof-eyebrow">Track record</div>
+      <h2 class="proof-headline">A track record that moves numbers</h2>
+
+      <div class="proof-stats">
+        <div>
+          <div class="stat-value">$17M</div>
+          <p class="stat-desc">in recovered lost sales through an eCommerce redesign</p>
+        </div>
+        <div>
+          <div class="stat-value">$4M+</div>
+          <p class="stat-desc">first-year revenue on a new B2B product launch, at 80%+ margin</p>
+        </div>
+        <div>
+          <div class="stat-value">0 &rarr; exit</div>
+          <p class="stat-desc">building and exiting a proptech SaaS venture from scratch</p>
+        </div>
+      </div>
+
+      <p class="proof-clients">Our team has operated at <strong>Woolworths</strong>, <strong>du Telecom</strong>, <strong>AAPT</strong> and beyond — two decades of commercial digital leadership across APAC and the GCC.</p>
+    </div>
+  </section>
+
+  <!-- WE BUILD -->
+  <section id="build" class="build">
+    <div class="build-inner">
+      <div class="build-header">
+        <div class="section-eyebrow section-eyebrow--blue">We build, too</div>
+        <h2>We don't just advise &mdash; we build and ship our own products.</h2>
+        <p>It keeps us honest: everything we recommend, we've done ourselves, with our own capital on the line.</p>
+      </div>
+
+      <div class="build-grid">
+        <article class="build-card">
+          <div class="build-card-header">
+            <span class="build-card-mark build-card-mark--dark">P</span>
+            <span class="build-card-badge">Built &middot; Scaled &middot; Exited</span>
+          </div>
+          <h3>Parkkey</h3>
+          <p>An online parking platform we built from the ground up, launched, scaled, and exited.</p>
+        </article>
+
+        <article class="build-card">
+          <div class="build-card-header">
+            <span class="build-card-mark build-card-mark--blue">A</span>
+            <span class="build-card-badge">Current venture &middot; adza.ai</span>
+          </div>
+          <h3>Adza <a href="https://adza.ai" target="_blank" rel="noopener">adza.ai &rarr;</a></h3>
+          <p>An AI platform for creating and distributing ad creative at scale, built for DTC eCommerce brands and performance agencies.</p>
+        </article>
+      </div>
+
+      <p class="build-tagline">When we talk about unlocking revenue through digital and AI, this is where it's tested.</p>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK -->
+  <section id="approach" class="approach">
+    <div class="approach-grid">
+      <div class="approach-left">
+        <div class="section-eyebrow section-eyebrow--blue">How we work</div>
+        <h2>Engagements built around outcomes, not hours</h2>
+        <p>No bloated retainers. We start with a clear diagnosis of where the commercial value is hiding, agree on what "moved the numbers" looks like, and stay accountable to it.</p>
+      </div>
+      <div class="approach-steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <div>
+            <div class="step-title">Diagnose</div>
+            <p>A clear read on where commercial value is hiding — before anyone touches a roadmap.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <div>
+            <div class="step-title">Agree the number</div>
+            <p>We define together what "moved the numbers" actually means, and commit to it.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <div>
+            <div class="step-title">Stay in the room</div>
+            <p>Embedded through execution and accountable to the same metrics you are.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta">
+    <div class="cta-inner">
+      <h2>Where's the revenue locked in your business?</h2>
+      <p>Tell us where you're trying to grow. We'll tell you honestly whether we can help &mdash; and how.</p>
+      <button class="btn-cta" onclick="openForm()">Start the conversation &rarr;</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="project/assets/logo-mark-white.png" alt="ADZA Digital">
+        <span class="footer-wordmark">ADZA DIGITAL</span>
+      </div>
+      <div class="footer-location">Sydney &amp; Dubai</div>
+      <div class="footer-links">
+        <a href="mailto:hello@adzadigital.com">hello@adzadigital.com</a>
+        <a href="https://www.linkedin.com/company/adza-digital/?viewAsMember=true" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="footer-copy">&copy; <span id="year"></span> Adza Digital</div>
+    </div>
+  </footer>
+
+  <!-- CONTACT MODAL -->
+  <div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" aria-label="Contact form" onclick="handleBackdropClick(event)">
+    <div class="modal-box" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeForm()" aria-label="Close">&times;</button>
+
+      <!-- Thank-you state -->
+      <div class="modal-thankyou" id="thankyou">
+        <div class="thankyou-icon">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6L9 17l-5-5"/>
+          </svg>
+        </div>
+        <h3 class="thankyou-title">Thanks — we'll be in touch.</h3>
+        <p class="thankyou-desc">We'll review what you've shared and come back with a clear next step, usually within two business days.</p>
+        <button class="btn-done" onclick="closeForm()">Done</button>
+      </div>
+
+      <!-- Form state -->
+      <div class="modal-form-wrap" id="formWrap">
+        <img src="project/assets/logo-mark.png" alt="" class="modal-logo">
+        <h3 class="modal-title">Let's talk</h3>
+        <p class="modal-sub">A few details and we'll get the conversation started.</p>
+
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <label class="field">
+            <span class="field-label">Name</span>
+            <input class="field-input" type="text" name="name" placeholder="Your name" required>
+          </label>
+          <label class="field">
+            <span class="field-label">Company name</span>
+            <input class="field-input" type="text" name="company" placeholder="Your company">
+          </label>
+          <label class="field">
+            <span class="field-label">Email</span>
+            <input class="field-input" type="email" name="email" placeholder="you@company.com" required>
+          </label>
+          <label class="field">
+            <span class="field-label">Phone number</span>
+            <input class="field-input" type="tel" name="phone" placeholder="+61 ...">
+          </label>
+          <button type="submit" class="btn-submit">Request a conversation &rarr;</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function openForm() {
+      document.getElementById('modal').classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeForm() {
+      document.getElementById('modal').classList.remove('is-open');
+      document.body.style.overflow = '';
+      // reset to form state after transition
+      setTimeout(() => {
+        document.getElementById('thankyou').classList.remove('is-visible');
+        document.getElementById('formWrap').classList.remove('is-hidden');
+        document.getElementById('contactForm').reset();
+      }, 200);
+    }
+
+    function handleBackdropClick(e) {
+      if (e.target === document.getElementById('modal')) closeForm();
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('formWrap').classList.add('is-hidden');
+      document.getElementById('thankyou').classList.add('is-visible');
+    }
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeForm();
+    });
+  </script>
+</body>
+</html>
